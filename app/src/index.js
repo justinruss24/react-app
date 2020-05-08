@@ -4,6 +4,8 @@ import './index.css';
 import App from './App';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from "redux";
+import { weatherReducer as reducer } from "../src/reducer/reducer.js";
+import thunk from "redux-thunk";
 import * as serviceWorker from './serviceWorker';
 
 const store = createStore(reducer, applyMiddleware(thunk));
@@ -12,7 +14,7 @@ ReactDOM.render(
   <Provider store={store}>
     <App />
   </Provider>,
-  
+
   document.getElementById('root')
 );
 
