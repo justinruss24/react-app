@@ -1,4 +1,4 @@
-import { FETCH_DATA, GET_WEATHER, SET_ERROR } from "../actions/actions.js";
+import { FETCH_DATA, TODAY_WEATHER, SET_ERROR } from "../actions/actions.js";
 
 const initialState = {
     weather: [],
@@ -11,9 +11,9 @@ export const weatherReducer = (state = initialState, action) => {
         case FETCH_DATA:
             return {
                 isFetchingData: true,
-                weather: {},
+                weather: [],
             };
-        case GET_WEATHER:
+        case TODAY_WEATHER:
             return {
                 weather: action.payload,
                 isFetchingData: false,

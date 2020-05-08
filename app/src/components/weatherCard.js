@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from "react-redux";
-import "../App.css";
+
 
 const Weather = props => {
     return (
@@ -8,10 +8,12 @@ const Weather = props => {
             {props.error ? (
                 <div className="error">{props.error}</div>
             ) : (
+                    // console.log(props)
                     props.weather.map(weather =>
                         <div className="weather">
-                            <h2>Weather</h2>
-                            <p>{weather.applicable_date}</p>
+                            {/* <h2>Weather</h2> */}
+                            <p>{weather.main['temp']}</p>
+                            <p>{weather.weather['main']}</p>
                         </div>)
                 )}
         </>
