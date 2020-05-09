@@ -14,7 +14,7 @@ export const getWeather = () => dispatch => {
         // console.log(res);
         dispatch({
           type: TODAY_WEATHER,
-          payload: res.data,
+          payload: res.data.main,
         });
       })
       .catch((error) => {
