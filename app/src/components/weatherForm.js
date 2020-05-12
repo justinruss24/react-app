@@ -5,9 +5,14 @@ import { getWeather } from "../actions/actions";
 
 const WeatherForm = props => {
 
+    function showTemp(){
+        document.getElementById("temp1").classList.remove("temp");
+    } 
+
     const handleGetWeather = e => {
         e.preventDefault();
         props.getWeather();
+        showTemp();
     };
 
     return (

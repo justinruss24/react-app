@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from "react-redux";
 import { getWeather } from "../actions/actions.js";
+import styled from "styled-components";
 
 
 const Weather = props => {
@@ -12,17 +13,15 @@ const Weather = props => {
 
     const decider = converter(temp);
 
+
     return (
       <>
-        {props.error ? (
-          <div className="error">{props.error}</div>
-        ) : (
-          <div>
-              <h3 className="temp">{decider}°F</h3>
-          </div>
-          //   <h2>Grab your sticks!</h2>
-          // console.log(props.weather)
-        )}
+      { (
+              <div>
+                <h3 id="temp1" className="temp">{decider}°F</h3>
+            </div>
+          )
+      }
       </>
     );
 };
