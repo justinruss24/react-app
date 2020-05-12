@@ -2,15 +2,32 @@ import React from 'react';
 import Weather from "./components/weatherCard.js";
 import WeatherForm from "./components/weatherForm";
 import './App.css';
+import styled from "styled-components";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGolfBall } from "@fortawesome/free-solid-svg-icons";
+
+const Header = styled.div `
+display: flex;
+align-items: center;
+background-color: white;
+flex-direction: column;
+opacity: 50%;
+border-radius: 20px;
+padding: 2%;
+margin-top: -15%;
+`
 
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Should you golf today, Justin?</h1>
-        <WeatherForm />
-        <Weather />
+        <Header>
+          <FontAwesomeIcon icon={faGolfBall} size="4x" />
+          <h2>Should you play golf today?</h2>
+          <WeatherForm />
+          <Weather />
+        </Header>
       </header>
     </div>
   );

@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from "react-redux";
 import { getWeather } from "../actions/actions.js";
-import styled from "styled-components";
+
 
 
 const Weather = props => {
@@ -17,7 +17,7 @@ const Weather = props => {
     return (
       <>
       { (
-              <div>
+            <div>
                 <h3 id="temp1" className="temp">{decider}°F</h3>
             </div>
           )

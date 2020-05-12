@@ -21,7 +21,7 @@ const WeatherForm = props => {
                 <div>Is the tee box calling?</div>
             ) : (
                     <div>
-                        <button onClick={handleGetWeather}>Golf Day?</button>
+                        <button onClick={handleGetWeather}>Check the Weather</button>
                     </div>
                 )}
         </div>
