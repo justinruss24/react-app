@@ -6,6 +6,8 @@ import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGolfBall } from "@fortawesome/free-solid-svg-icons";
 
+// just adding a comment
+
 const Header = styled.div `
 display: flex;
 align-items: center;
@@ -13,7 +15,7 @@ background-color: white;
 flex-direction: column;
 background-opacity: 50%;
 border-radius: 20px;
-padding: 2% 2% 0 2%;
+padding: 2%;
 margin-top: -15%;
 `
 

@@ -15,7 +15,7 @@ const Weather = props => {
 
     function canGolf(decider) {
        if ( isNaN(decider) ) {
-           return <h4></h4>;
+           return <span></span>;
        } else if (decider > 55) {
          return (
            <div>
