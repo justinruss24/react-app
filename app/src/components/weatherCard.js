@@ -13,14 +13,34 @@ const Weather = props => {
 
     const decider = converter(temp);
 
+    function canGolf(decider) {
+       if ( isNaN(decider) ) {
+           return <h4></h4>;
+       } else if (decider > 55) {
+         return (
+           <div>
+             <h3 id="temp1" className="temp">
+               {decider}°F?!
+             </h3>
+             <h4>You bet your sweet ass he is.</h4>
+           </div>
+         );
+       } else {
+         return (
+           <div>
+             <h3 id="temp1" className="temp">
+               {decider}°F
+             </h3>
+             <h4>Probably not.</h4>
+           </div>
+         );
+       }
+    }
+
 
     return (
-      <>
-      { (
-            <div>
-                <h3 id="temp1" className="temp">{decider}°F</h3>
-            </div>
-          )
+      <>{
+            canGolf(decider)
       }
       </>
     );
@@ -28,9 +48,10 @@ const Weather = props => {
 
 const mapStateToProps = state => {
     return {
-        weather: state.weather,
-        error: state.error
-    }
+      weather: state.weather,
+      error: state.error,
+      isFetchingData: state.isFetchingData
+    };
 };
 
 export default connect(mapStateToProps, { getWeather })(Weather);

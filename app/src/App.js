@@ -11,9 +11,9 @@ display: flex;
 align-items: center;
 background-color: white;
 flex-direction: column;
-opacity: 50%;
+background-opacity: 50%;
 border-radius: 20px;
-padding: 2%;
+padding: 2% 2% 0 2%;
 margin-top: -15%;
 `
 
@@ -24,7 +24,7 @@ function App() {
       <header className="App-header">
         <Header>
           <FontAwesomeIcon icon={faGolfBall} size="4x" />
-          <h2>Should you play golf today?</h2>
+          <h2>Is Justin golfing today?</h2>
           <WeatherForm />
           <Weather />
         </Header>

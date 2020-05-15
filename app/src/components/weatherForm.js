@@ -3,16 +3,17 @@ import { connect } from "react-redux";
 
 import { getWeather } from "../actions/actions";
 
+
 const WeatherForm = props => {
 
-    function showTemp(){
-        document.getElementById("temp1").classList.remove("temp");
+    function byeBtn(){
+        document.getElementById("btn").classList.add("seeYa");
     } 
 
     const handleGetWeather = e => {
         e.preventDefault();
         props.getWeather();
-        showTemp();
+        byeBtn();
     };
 
     return (
@@ -21,7 +22,7 @@ const WeatherForm = props => {
                 <div>Is the tee box calling?</div>
             ) : (
                     <div>
-                        <button onClick={handleGetWeather}>Check the Weather</button>
+                        <button className="myButton" id="btn" onClick={handleGetWeather}>Check Weather in Portland</button>
                     </div>
                 )}
         </div>
