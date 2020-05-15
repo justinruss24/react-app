@@ -11,6 +11,8 @@ const Weather = props => {
     }
     const temp = props.weather.temp;
 
+    console.log(props);
+
     const decider = converter(temp);
 
     function canGolf(decider) {
