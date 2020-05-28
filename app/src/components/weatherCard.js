@@ -10,23 +10,23 @@ const Weather = props => {
         return Math.floor((num - 273.15) * 9/5 + 32);
     }
     const temp = props.weather.temp;
-    const highTemp = props.weather.temp_max;
+    const ht = props.weather.temp_max;
 
     console.log(props);
 
     const decider = converter(temp);
-    const high = converter(highTemp);
+    const high = converter(ht);
 
-    function canGolf(decider) {
-       if ( isNaN(decider) ) {
+    function canGolf(high) {
+       if ( isNaN(high) ) {
            return <span></span>;
-       } else if (decider > 55) {
+       } else if (high > 55) {
          return (
            <div>
              <h3 id="temp1" className="temp">
-               {decider}°F?!
+               Current Temp: {decider}°F
              </h3>
-             <h3 className="temp">(Temp High: {high}°F)</h3>
+             <h3 className="temp">(Temp High: {high}°F?!)</h3>
              <h4>You bet your sweet ass he is.</h4>
            </div>
          );
@@ -45,7 +45,7 @@ const Weather = props => {
 
     return (
       <>{
-            canGolf(decider)
+            canGolf(high)
       }
       </>
     );
